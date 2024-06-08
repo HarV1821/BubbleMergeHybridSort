@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    const int NUM_ELEMENTS = 4000;
+    const int NUM_ELEMENTS = 6000;
     const int MIN_VALUE = 1;
     const int MAX_VALUE = 100;
 
