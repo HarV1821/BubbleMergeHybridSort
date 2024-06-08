@@ -118,7 +118,7 @@ int main() {
     time_point<system_clock> start, end;
     
     // 1. Read data from file
-    string filename = "SampleDatasetA.txt"; // Replace with your file name
+    string filename = "SampleDataset_5kE.txt"; // Replace with your file name
     vector<int> arr = readDataFromFile(filename);
 
     // 2. Start timing after conversion
@@ -134,8 +134,7 @@ int main() {
     duration<double, milli> elapsed_milliseconds = end - start;
     time_t end_time = system_clock::to_time_t(end);
 
-    cout << "finished computation at " << ctime(&end_time);
-    cout << "elapsed time: " << elapsed_milliseconds.count() << " ms\n";
+    cout << "Sorting time: " << elapsed_milliseconds.count() << " ms\n";
 
     return 0;
 }
