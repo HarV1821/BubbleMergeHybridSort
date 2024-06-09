@@ -4,7 +4,7 @@ def generate_random_numbers(num_elements, min_value=1, max_value=100):
     """Generates a list of random numbers within the specified range."""
     return [random.randint(min_value, max_value) for _ in range(num_elements)]
 
-def save_to_file(numbers, filename="SampleDataset_20kE.txt"):
+def save_to_file(numbers, filename="SampleDataset_30kE.txt"):
     """Saves a list of numbers to a file with commas and spaces."""
     with open(filename, "w") as file:
         file.write(", ".join(map(str, numbers)))  # Convert to strings and join
@@ -13,7 +13,7 @@ def save_to_file(numbers, filename="SampleDataset_20kE.txt"):
 # num_elements = int(input("Enter the number of random numbers to generate: "))
 
 # Number of elements to be generated
-num_elements = 20000
+num_elements = 30000
 
 # Generate the random numbers
 random_numbers = generate_random_numbers(num_elements)
