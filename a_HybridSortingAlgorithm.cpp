@@ -4,10 +4,10 @@
 #include <fstream>
 #include <sstream>
 
-// Threshold for switching to Bubble Sort
+// Threshold for Bubble Sort
 const int THRESHOLD = 100;
 
-// Function to merge two halves
+// Function for merging two halves
 void merge(std::vector<int>& array, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
@@ -22,10 +22,10 @@ void merge(std::vector<int>& array, int left, int mid, int right) {
     for (int i = 0; i < n2; ++i)
         rightArray[i] = array[mid + 1 + i];
     
-    // Merge the temporary arrays back into array[left..right]
-    int i = 0; // Initial index of left array
-    int j = 0; // Initial index of right array
-    int k = left; // Initial index of merged subarray
+    // Merge temporary arrays back into array[left right]
+    int i = 0;
+    int j = 0;
+    int k = left;
     while (i < n1 && j < n2) {
         if (leftArray[i] <= rightArray[j]) {
             array[k] = leftArray[i];
@@ -37,14 +37,14 @@ void merge(std::vector<int>& array, int left, int mid, int right) {
         ++k;
     }
     
-    // Copy the remaining elements of leftArray[], if any
+    // Copy remaining elements of leftArray[], if any
     while (i < n1) {
         array[k] = leftArray[i];
         ++i;
         ++k;
     }
     
-    // Copy the remaining elements of rightArray[], if any
+    // Copy remaining elements of rightArray[], if any
     while (j < n2) {
         array[k] = rightArray[j];
         ++j;
@@ -52,7 +52,7 @@ void merge(std::vector<int>& array, int left, int mid, int right) {
     }
 }
 
-// Function to implement Bubble Sort
+// Bubble Sort Function
 void bubbleSort(std::vector<int>& array, int left, int right) {
     for (int i = left; i < right; ++i) {
         for (int j = left; j < right - (i - left); ++j) {
@@ -85,14 +85,14 @@ void hybridMergeSort(std::vector<int>& array, int left, int right) {
 
 int main() {
     std::vector<int> array;
-    std::ifstream inputFile("SampleDataset_15kE.txt");  // Replace with your filename
+    std::ifstream inputFile("SampleDataset_20kE.txt");  // Replace with filename
     std::string line, numStr;
 
     // Read the line from the file
     if (getline(inputFile, line)) {
-        std::stringstream ss(line); // Use stringstream for parsing
+        std::stringstream ss(line);
 
-        // Parse the comma-separated integers
+        // Read the comma-separated integers
         while (getline(ss, numStr, ',')) {
             int num = std::stoi(numStr);
             array.push_back(num);
@@ -103,7 +103,7 @@ int main() {
     using namespace std::chrono;
     time_point<system_clock> start, end;
 
-    // Start timing after parsing
+    // Start Recording of Time
     start = system_clock::now();
 
     int arraySize = array.size();
@@ -111,7 +111,9 @@ int main() {
 
     hybridMergeSort(array, 0, arraySize - 1);
 
+    // End Recording of Time
     end = system_clock::now();
+
     duration<double, std::milli> elapsed_milliseconds = end - start;
     time_t end_time = system_clock::to_time_t(end);
 
