@@ -32,7 +32,7 @@ void printArray(int arr[], int size)
 int main()
 {
     // 1. Read data from file
-    ifstream inputFile("SampleDataset_25kE.txt");  // Replace 'data.txt' with your file name
+    ifstream inputFile("SampleDataset_30kE.txt");  // Replace 'data.txt' with your file name
     string line;
     vector<int> arr;
 
