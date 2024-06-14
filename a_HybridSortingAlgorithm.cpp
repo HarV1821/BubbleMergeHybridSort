@@ -85,7 +85,7 @@ void hybridMergeSort(std::vector<int>& array, int left, int right) {
 
 int main() {
     std::vector<int> array;
-    std::ifstream inputFile("SampleDataset_45kA.txt");  // Replace with filename
+    std::ifstream inputFile("data_set_150000.txt");  // Replace with filename
     std::string line, numStr;
 
     // Read the line from the file
@@ -93,7 +93,7 @@ int main() {
         std::stringstream ss(line);
 
         // Read the comma-separated integers
-        while (getline(ss, numStr, ',')) {
+        while (getline(ss, numStr, ' ')) {
             int num = std::stoi(numStr);
             array.push_back(num);
         }

@@ -102,7 +102,7 @@ vector<int> readDataFromFile(const string& filename) {
         while (getline(file, line)) {
             stringstream ss(line);
             string value;
-            while (getline(ss, value, ',')) { // Split by ','
+            while (getline(ss, value, ' ')) { // Split by ','
                 data.push_back(stoi(value));  // Convert string to int
             }
         }
@@ -118,7 +118,7 @@ int main() {
     time_point<system_clock> start, end;
     
     // 1. Read data from file
-    string filename = "SampleDataset_40kE.txt"; // Replace with your file name
+    string filename = "data_set_150000.txt"; // Replace with your file name
     vector<int> arr = readDataFromFile(filename);
 
     // 2. Start timing after conversion
