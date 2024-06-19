@@ -118,7 +118,7 @@ int main() {
     time_point<system_clock> start, end;
     
     // 1. Read data from file
-    string filename = "data_set_200000.txt"; // Replace with your file name
+    string filename = "data_set_100000.txt"; // Replace with your file name
     vector<int> arr = readDataFromFile(filename);
 
     // 2. Start timing after conversion
